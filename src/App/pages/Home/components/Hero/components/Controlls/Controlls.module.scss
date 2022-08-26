@@ -1,0 +1,15 @@
+@import "../../../../../../styles/variables";
+
+.controlls {
+  padding: 14px 27px;
+  display: grid;
+  grid-template-columns: 32px 1fr 150px;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 60px rgba(175, 173, 181, 0.4);
+  &:focus-within {
+    outline: 0;
+    border: 1px solid $color-text-dark;
+  }
+}

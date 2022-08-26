@@ -1,0 +1,49 @@
+@import "@styles/variables";
+
+.card {
+  transition: box-shadow 0.3s ease-in-out;
+  background: #fff;
+
+  &__image {
+    height: 360px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 26px;
+  }
+
+  &__category {
+    color: $color-text-light;
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 130%;
+    margin-bottom: 14px;
+    margin-top: 0;
+  }
+
+  &__title {
+    color: $color-text-dark;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 130%;
+    margin-bottom: 6px;
+    margin-top: 0;
+  }
+
+  &__subtitle {
+    color: $color-text-light;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 180%;
+    margin-bottom: 18px;
+    margin-top: 0;
+  }
+
+  &__price {
+    color: $color-text-dark;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    margin: 0;
+  }
+}

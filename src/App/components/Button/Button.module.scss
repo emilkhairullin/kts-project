@@ -1,0 +1,54 @@
+@import "../../styles/variables";
+
+.button {
+  color: white;
+  font-family: $font-family;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: $color-main;
+  border: none;
+  padding: 14px 28px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $color-main-disabled;
+    border-color: $color-main-disabled;
+  }
+
+  &--loading {
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 18px;
+  }
+
+  &_color--primary {
+    background-color: $color-main;
+    border: 2px solid $color-main;
+
+    &:hover {
+      background: $color-main-light;
+      border-color: $color-main-light;
+    }
+  }
+
+  &_color--secondary {
+    color: $color-text-dark;
+    background-color: #fff;
+    border: 2px solid $color-button-secondary-border;
+
+    &:hover {
+      background-color: $color-button-secondary-border;
+    }
+  }
+
+  &_loader {
+    fill: white !important;
+    stroke: white !important;
+    margin-right: 12px;
+  }
+}

@@ -1,0 +1,12 @@
+@import "@styles/variables";
+
+.read-more {
+  margin: 0;
+  &__show-button {
+    color: $color-main;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
