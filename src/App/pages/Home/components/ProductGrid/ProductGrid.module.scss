@@ -1,0 +1,46 @@
+@import "@styles/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+
+  &__title {
+    color: $color-text-dark;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 130%;
+    margin: 0;
+    margin-right: 28px;
+  }
+
+  &__count {
+    color: $color-main;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 30px;
+  padding-bottom: 50px;
+  &__link {
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

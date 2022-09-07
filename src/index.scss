@@ -1,0 +1,23 @@
+@import-normalize;
+@import "@styles/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  @media screen {
+  }
+}

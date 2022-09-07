@@ -1,0 +1,11 @@
+@import "@styles/variables";
+
+.not-found {
+  min-height: $page-min-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: $color-text-dark;
+}

@@ -1,0 +1,10 @@
+@import "@styles/variables";
+
+.empty-page {
+  min-height: $page-min-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: $color-text-light;
+}

@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.m-d {
+  position: relative;
+
+  &__button {
+    align-items: center;
+    border: 1px solid transparent;
+    background-color: #fff;
+    color: $color-text-dark;
+    display: flex;
+    box-shadow: 0px 4px 120px rgba(175, 173, 181, 0.4);
+    font-size: 18px;
+    font-weight: 500;
+    height: 82px;
+    justify-content: center;
+    line-height: 180%;
+    min-width: 192px;
+    padding: 0 !important;
+  }
+
+  &__button:focus {
+    outline: none;
+    border: 1px solid;
+  }
+
+  &__options {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    list-style: none;
+    box-shadow: 0px 4px 120px rgba(175, 173, 181, 0.4);
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+  }
+
+  &__option {
+    text-align: center;
+    padding: 17px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    &--active {
+      background-color: rgb(245, 245, 245);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "@styles/variables";
+
+.footer {
+  height: 120px;
+  border-top: 2px solid $color-button-secondary-border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    color: $color-text-light;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+
+    &:nth-child(1) {
+      margin-bottom: 16px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "@styles/variables";
+
+.header {
+  border-bottom: 2px solid $color-button-secondary-border;
+  height: 120px;
+
+  @media only screen and (max-width: 480px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: red;
+  }
+}
+
+.header__container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  height: 100%;
+}

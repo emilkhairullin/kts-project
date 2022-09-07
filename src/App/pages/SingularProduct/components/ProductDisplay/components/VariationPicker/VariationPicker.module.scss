@@ -1,0 +1,29 @@
+@import "@styles/variables";
+
+.variation-picker {
+  &__name {
+    color: $color-text-dark;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__variation {
+    display: block;
+    height: 50px;
+    width: 50px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-4px);
+    }
+  }
+}
