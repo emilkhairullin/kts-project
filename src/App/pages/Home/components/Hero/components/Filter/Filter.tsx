@@ -1,14 +1,16 @@
-import { useCategories } from "@api/hooks";
+import React from "react";
+
 import filterIcon from "@assets/icon-filter.svg";
 import { MultiDropdown } from "@components/MultiDropdown";
 import { useProductsContext } from "@contexts/ProductsContext";
 import { convertCategoriesToOptions } from "@utils/convertCategoriesToOptions";
+import { Meta } from "@utils/meta";
+import { observer } from "mobx-react-lite";
 
-import styles from "./Filter.module.scss";
+const Filter = () => {
+  const { categories, selectedCategories, setSelectedCategories, meta } =
+    useProductsContext();
 
-export const Filter = () => {
-  const { selectedCategories, setSelectedCategories } = useProductsContext();
-  const { categories, loading } = useCategories();
   const buttonText = (
     <>
       <img src={filterIcon} alt="" style={{ marginRight: "12px" }} /> Filter
@@ -18,10 +20,12 @@ export const Filter = () => {
     <MultiDropdown
       buttonText={buttonText}
       options={convertCategoriesToOptions(categories)}
-      loading={loading}
+      loading={meta === Meta.loading}
       value={selectedCategories}
       onChange={setSelectedCategories}
       pluralizeOptions={(value) => `Selected: ${value.length}`}
     />
   );
 };
+
+export default observer(Filter);

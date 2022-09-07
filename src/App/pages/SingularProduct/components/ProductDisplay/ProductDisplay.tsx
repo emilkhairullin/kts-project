@@ -3,12 +3,13 @@ import React from "react";
 import { Button, ButtonColor } from "@components/Button";
 import { ReadMore } from "@components/ReadMore";
 import { useProductContext } from "@contexts/ProductContext";
+import { observer } from "mobx-react-lite";
 
 import { VariationPicker } from "./components/VariationPicker";
 import type { Variation } from "./components/VariationPicker";
 import styles from "./ProductDisplay.module.scss";
 
-export const ProductDisplay = () => {
+const ProductDisplay: React.FC = () => {
   const { product } = useProductContext();
 
   const variations: Variation[] = [
@@ -36,10 +37,7 @@ export const ProductDisplay = () => {
           name="Color"
           variations={variations}
           className={styles["product-display__variations"]}
-          onVariationClick={(variation) =>
-            // eslint-disable-next-line no-console
-            console.log(`${variation.name} was clicked!`)
-          }
+          onVariationClick={(variation) => {}}
         />
         {product?.description && (
           <ReadMore
@@ -57,3 +55,5 @@ export const ProductDisplay = () => {
     </section>
   );
 };
+
+export default observer(ProductDisplay);
