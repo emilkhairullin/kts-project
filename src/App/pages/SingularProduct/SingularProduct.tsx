@@ -1,25 +1,30 @@
-import { useProduct } from "@api/hooks";
+import React from "react";
+
 import { WithLoader } from "@components/WithLoader";
 import { ProductContext } from "@contexts/ProductContext";
+import { useProduct } from "@hooks/useProduct";
+import { Meta } from "@utils/meta";
 import classNames from "classnames";
-import { useParams } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 
-import { ProductDisplay } from "./components/ProductDisplay";
-import { RelatedItems } from "./components/RelatedItems";
+import ProductDisplay from "./components/ProductDisplay/ProductDisplay";
+import RelatedItems from "./components/RelatedItems/RelatedItems";
 import styles from "./SingularProduct.module.scss";
 
-export const SingularProduct = () => {
-  const { id } = useParams<{ id: string }>();
-  const { product, relatedItems, loading, error } = useProduct(id as string);
-
-  const pageStyles = classNames(styles["singular-page"], "container");
+const SingularProduct: React.FC = () => {
+  const { productStore } = useProduct();
 
   return (
-    <ProductContext.Provider value={{ product, relatedItems, loading, error }}>
-      <WithLoader loading={loading} className={pageStyles}>
+    <ProductContext.Provider value={productStore}>
+      <WithLoader
+        loading={productStore.meta === Meta.loading}
+        className={classNames(styles["singular-page"], "container")}
+      >
         <ProductDisplay />
         <RelatedItems />
       </WithLoader>
     </ProductContext.Provider>
   );
 };
+
+export default observer(SingularProduct);

@@ -1,30 +1,19 @@
-import { useProducts } from "@api/hooks";
 import { ProductsContext } from "@contexts/ProductsContext";
+import { useProducts } from "@hooks/useProducts";
+import { observer } from "mobx-react-lite";
 
 import { Hero } from "./components/Hero";
-import { ProductGrid } from "./components/ProductGrid";
+import ProductGrid from "./components/ProductGrid";
 
-export const Home = () => {
-  const {
-    products,
-    loading,
-    error,
-    selectedCategories,
-    setSelectedCategories,
-  } = useProducts();
+const Home: React.FC = () => {
+  const { productsStore } = useProducts();
 
   return (
-    <ProductsContext.Provider
-      value={{
-        products,
-        loading,
-        error,
-        selectedCategories,
-        setSelectedCategories,
-      }}
-    >
+    <ProductsContext.Provider value={productsStore}>
       <Hero />
       <ProductGrid />
     </ProductsContext.Provider>
   );
 };
+
+export default observer(Home);
