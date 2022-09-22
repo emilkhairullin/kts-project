@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+.loader {
+  fill: $color-main;
+  animation: spin 1s linear infinite;
+
+  &_size {
+    &-s {
+      height: 20px;
+      width: 20px;
+      stroke: $color-main;
+      stroke-width: 1px;
+    }
+
+    &-m {
+      height: 40px;
+      width: 40px;
+    }
+
+    &-l {
+      height: 60px;
+      width: 60px;
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -2,6 +2,8 @@ import React from "react";
 
 import styles from "./NotFound.module.scss";
 
-export const NotFound = () => {
+const NotFound: React.FC = React.memo(() => {
   return <div className={styles["not-found"]}>NotFound</div>;
-};
+});
+
+export default NotFound;
